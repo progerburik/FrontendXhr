@@ -33,10 +33,10 @@ export class Api {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const data = JSON.parse(xhr.responseText);
                 if (onSuccess !== undefined) {
-                    console.log(data);
+                    onSuccess(data);
                 }
                 return;
-            } xhr.send(body);
+            }
 
             if (onFail !== undefined) {
                 onFail(xhr.statusText);
@@ -47,12 +47,7 @@ export class Api {
             if (onFail !== undefined) {
                 onFail('Unexpected error');
             }
-
         });
-
-        xhr.send(JSON.stringify({
-            id: 0,
-            content: 'New video post',
-        }));
+        xhr.send(body);
     }
 }
