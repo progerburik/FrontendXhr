@@ -1,5 +1,5 @@
 import { Api } from './lib.js';
-const api = new Api('https://progerburik-server-express.herokuapp.com');  // http://localhost:9999
+const api = new Api('https://progerburik-server-express.herokuapp.com');
 
 const rootEl = document.getElementById('root');
 const addEl = document.createElement('form');
